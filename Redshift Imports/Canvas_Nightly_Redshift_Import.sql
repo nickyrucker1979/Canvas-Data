@@ -1,6 +1,3 @@
--- "C:\Program Files (x86)\Exasol\EXASolution-6.0\EXAplus\exaplus"
--- -c 10.132.13.17..18,10.132.13.20..21:8563 -u sys -p cuExa!sys1 -f "C:\Users\ruckern\CU_Online_Marketing_Scripts\CanvasData_Production\Canvas_Nightly_Redshift_Import.sql"
-
 -- truncate tables
 truncate table CANVAS_DATA_NIGHTLY_IMPORTS.ACCOUNT_DIM;
 truncate table CANVAS_DATA_NIGHTLY_IMPORTS.ASSIGNMENT_GROUP_DIM;
@@ -909,7 +906,7 @@ import into CANVAS_DATA_NIGHTLY_IMPORTS.GROUP_DIM
 	SIS_SOURCE_ID ,
 	GROUP_CATEGORY_ID ,
 	ACCOUNT_ID ,
-	WIKI_ID 
+	WIKI_ID
 )
 from  jdbc at CANVAS_REDSHIFT -- virtual connection to Redshift (credentials stored in exasol)
       statement
@@ -930,7 +927,7 @@ from  jdbc at CANVAS_REDSHIFT -- virtual connection to Redshift (credentials sto
 		SIS_SOURCE_ID ,
 		GROUP_CATEGORY_ID ,
 		ACCOUNT_ID ,
-		WIKI_ID 
+		WIKI_ID
       from GROUP_DIM'  -- redshift query to execute
 
 
