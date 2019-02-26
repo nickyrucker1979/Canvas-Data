@@ -1,0 +1,4 @@
+api_secret:
+api_key:
+download_dir: ./downloads
+data_dir: ./data
